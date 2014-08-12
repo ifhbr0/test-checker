@@ -30,7 +30,8 @@ def run(name, configs):
 			print
 	
 parser = argparse.ArgumentParser()
-parser.add_argument('--crit', help='show critical statuses only', action="store_true")
+parser.add_argument('--crit', help='show errors only', action="store_true")
+parser.add_argument('--warn', help='show warnings and errors', action="store_true")
 parser.add_argument('--run', help='run check by name', action="store_true")
 parser.add_argument("name_to_run", nargs='?')
 args = parser.parse_args()
@@ -41,7 +42,9 @@ if args.run:
 	run(args.name_to_run, cfgs)
 	exit(0)
 
-if args.crit:
+if args.warn:
+	read_print_status(cfgs,1)
+elif args.crit:
 	read_print_status(cfgs, 2)
 else:
 	read_print_status(cfgs)
