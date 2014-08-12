@@ -1,0 +1,5 @@
+* * * * * root /usr/local/test-checker/examples/warntest.sh > /usr/local/test-checker/status/warntest.status
+* * * * * root /usr/local/test-checker/examples/errortest.sh > /usr/local/test-checker/status/errortest.status
+* * * * * root /usr/local/test-checker/examples/oktest.sh > /usr/local/test-checker/status/oktest.status
+* * * * * root /usr/local/test-checker/examples/response_code.sh > /usr/local/test-checker/status/response_code.status
+* * * * * root /usr/local/test-checker/examples/response_time.sh > /usr/local/test-checker/status/response_time.status
