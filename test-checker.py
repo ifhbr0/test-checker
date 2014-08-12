@@ -16,10 +16,11 @@ def read_print_status(configs, severity_level=0):
     for conf in configs:
         name = conf.get('config', 'name')
         status_file = conf.get('config', 'status')
-        f = open(status_file, 'r')
-        level_desc = f.read().split(';', 1)
-	if int(level_desc[0]) >= severity_level:
-        	print name, ': ', level_desc[0], ' (',level_desc[1].strip(),')'
+	if os.access(status_file, os.R_OK):
+            f = open(status_file, 'r')
+            level_desc = f.read().split(';', 1)
+	    if int(level_desc[0]) >= severity_level:
+                print name, ': ', level_desc[0], ' (',level_desc[1].strip(),')'
 
 def run(name, configs):
 	for conf in configs:
