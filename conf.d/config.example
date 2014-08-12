@@ -1,0 +1,6 @@
+[config]
+name=example ;check name
+binary=/usr/local/bin/example ;path to binary file
+desc='example description' ;optional description
+cron='* * * * *' ;cron string
+status=/usr/local/test-checker/status/example.status ;status file
