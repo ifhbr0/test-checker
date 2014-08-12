@@ -4,7 +4,7 @@ import os, argparse, glob, subprocess, sys
 from ConfigParser import SafeConfigParser
 
 def parse_configs():
-    indir = './conf.d/*.conf'
+    indir = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'conf.d/*.conf')
     configs = []
     for filename in glob.glob(indir):
         parser = SafeConfigParser()
